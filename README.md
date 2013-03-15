@@ -9,19 +9,19 @@
 
 Add `introjs-rails` to your Gemfile and run `bundle install`:
 
-  gem "introjs-rails"
+     gem "introjs-rails"
 
 ### Include introjs-rails javascript assets
 
 Add the following to your `app/assets/javascripts/application.js`:
 
-  //= require introjs
+     //= require introjs
 
 ### Include introjs-rails stylesheet assets
 
 Add to your `app/assets/stylesheets/application.css`:
 
-  *= require introjs
+     *= require introjs
 
 ## Version
 
