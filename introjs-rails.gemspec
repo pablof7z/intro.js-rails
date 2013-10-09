@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version     = Introjs::Rails::VERSION
   s.authors     = ["Pablo Fernandez"]
   s.email       = ["heelhook@littleq.net"]
-  s.homepage    = "https://github.com/heelhook/introjs-rails"
+  s.homepage    = "https://github.com/heelhook/intro.js-rails"
   s.summary     = %q{Integrate the excellent Intro.js javascript library with Rails asset pipeline}
   s.description = %q{A better way for new feature introduction and step-by-step users guide for your website and project.}
 
