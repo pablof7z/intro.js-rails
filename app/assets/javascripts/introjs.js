@@ -549,7 +549,7 @@
         if(targetElement.tooltipElement)
         {
       		console.log("should clone")
-        	
+
         	var src = document.querySelector(targetElement.tooltipElement);
         	var clone = src.cloneNode(true);
         	clone.style.opacity = 1;
@@ -557,10 +557,11 @@
       		console.log(clone) 
         	oldtooltipLayer.appendChild(clone);
         }
-      
+		else
+		{     
     	//set current tooltip text
-    	oldtooltipLayer.innerHTML = targetElement.intro;
-    
+    		oldtooltipLayer.innerHTML = targetElement.intro;
+    	}
         //set the tooltip position
         _placeTooltip.call(self, targetElement.element, oldtooltipContainer, oldArrowLayer, oldHelperNumberLayer);
 
@@ -608,9 +609,10 @@
 
 	    	tooltipTextLayer.appendChild(clone);
 	   }
-	
+	else
+	{
        tooltipTextLayer.innerHTML = targetElement.intro;
-      
+     } 
 
       bulletsLayer.className = 'introjs-bullets';
 
