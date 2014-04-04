@@ -586,7 +586,9 @@
       arrowLayer.className = 'introjs-arrow';
 
       tooltipTextLayer.className = 'introjs-tooltiptext';
-
+       
+      console.log("_showElement")
+      console.log(targetElement) 
 	  if(targetElement.tooltipElement)
 	   {
 	    	src = document.querySelector(targetElement.tooltipElement);
