@@ -594,6 +594,9 @@
 	    	src = document.querySelector(targetElement.tooltipElement);
 	    	clone = src.cloneNode(true);
 	    	clone.style.opacity = 1;
+      		console.log(src) 
+      		console.log(clone) 
+
 	    	tooltipTextLayer.appendChild(clone);
 	   }
 	
