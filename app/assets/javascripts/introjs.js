@@ -544,11 +544,17 @@
           oldHelperNumberLayer.innerHTML = targetElement.step;
         }
 
+      console.log("_showElement")
+      console.log(targetElement)
         if(targetElement.tooltipElement)
         {
-        	src = document.querySelector(targetElement.tooltipElement);
-        	clone = src.cloneNode(true);
+      		console.log("should clone")
+        	
+        	var src = document.querySelector(targetElement.tooltipElement);
+        	var clone = src.cloneNode(true);
         	clone.style.opacity = 1;
+        	console.log(src) 
+      		console.log(clone) 
         	oldtooltipLayer.appendChild(clone);
         }
       
@@ -591,11 +597,14 @@
       console.log(targetElement) 
 	  if(targetElement.tooltipElement)
 	   {
-	    	src = document.querySelector(targetElement.tooltipElement);
-	    	clone = src.cloneNode(true);
+      		console.log("should clone")
+
+	    	var src = document.querySelector(targetElement.tooltipElement);
+	    	var clone = src.cloneNode(true);
 	    	clone.style.opacity = 1;
       		console.log(src) 
       		console.log(clone) 
+      		
 
 	    	tooltipTextLayer.appendChild(clone);
 	   }
