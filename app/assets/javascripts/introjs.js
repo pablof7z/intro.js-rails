@@ -544,8 +544,9 @@
           oldHelperNumberLayer.innerHTML = targetElement.step;
         }
 
-      console.log("_showElement")
-      console.log(targetElement)
+      	console.log("_showElement")
+      	console.log(targetElement)
+      	oldtooltipLayer.innerHTML = targetElement.intro;
         if(targetElement.tooltipElement)
         {
       		console.log("should clone")
@@ -596,6 +597,8 @@
        
       console.log("_showElement")
       console.log(targetElement) 
+      tooltipTextLayer.innerHTML = targetElement.intro;
+
 	  if(targetElement.tooltipElement)
 	   {
       		console.log("should clone")
