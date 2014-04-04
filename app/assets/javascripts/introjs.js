@@ -544,25 +544,14 @@
           oldHelperNumberLayer.innerHTML = targetElement.step;
         }
 
-      	console.log("_showElement")
-      	console.log(targetElement)
       	oldtooltipLayer.innerHTML = targetElement.intro;
         if(targetElement.tooltipElement)
         {
-      		console.log("should clone")
-
         	var src = document.querySelector(targetElement.tooltipElement);
         	var clone = src.cloneNode(true);
         	clone.style.opacity = 1;
-        	console.log(src) 
-      		console.log(clone) 
         	oldtooltipLayer.appendChild(clone);
         }
-		else
-		{     
-    	//set current tooltip text
-    		oldtooltipLayer.innerHTML = targetElement.intro;
-    	}
         //set the tooltip position
         _placeTooltip.call(self, targetElement.element, oldtooltipContainer, oldArrowLayer, oldHelperNumberLayer);
 
@@ -595,27 +584,15 @@
 
       tooltipTextLayer.className = 'introjs-tooltiptext';
        
-      console.log("_showElement")
-      console.log(targetElement) 
       tooltipTextLayer.innerHTML = targetElement.intro;
 
 	  if(targetElement.tooltipElement)
 	   {
-      		console.log("should clone")
-
 	    	var src = document.querySelector(targetElement.tooltipElement);
 	    	var clone = src.cloneNode(true);
 	    	clone.style.opacity = 1;
-      		console.log(src) 
-      		console.log(clone) 
-      		
-
 	    	tooltipTextLayer.appendChild(clone);
 	   }
-	else
-	{
-       tooltipTextLayer.innerHTML = targetElement.intro;
-     } 
 
       bulletsLayer.className = 'introjs-bullets';
 
