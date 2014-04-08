@@ -549,7 +549,7 @@
         {
         	var src = document.querySelector(targetElement.tooltipElement);
         	var clone = src.cloneNode(true);
-        	clone.style.opacity = 1;
+        	clone.style.display = true;
         	oldtooltipLayer.appendChild(clone);
         }
         //set the tooltip position
@@ -590,7 +590,7 @@
 	   {
 	    	var src = document.querySelector(targetElement.tooltipElement);
 	    	var clone = src.cloneNode(true);
-	    	clone.style.opacity = 1;
+	    	clone.style.display = 1;
 	    	tooltipTextLayer.appendChild(clone);
 	   }
 
