@@ -433,10 +433,13 @@
         arrowLayer.style.display = 'none';
 
         //we have to adjust the top and left of layer manually for intro items without element{
+        
         var tooltipOffset = _getOffset(tooltipLayer);
 
         tooltipLayer.style.left   = '50%';
         tooltipLayer.style.top    = '50%';
+        console.log('floating:' + tooltipOffset.height);
+        console.log(tooltipLayer)
         tooltipLayer.style.marginLeft = '-' + (tooltipOffset.width / 2)  + 'px';
         tooltipLayer.style.marginTop  = '-' + (tooltipOffset.height / 2) + 'px';
 
@@ -695,6 +698,10 @@
 
       //set proper position
       _placeTooltip.call(self, targetElement.element, tooltipLayer, arrowLayer, helperNumberLayer);
+      // setTimeout(function() {
+      //  _placeTooltip.call(self, targetElement.element, tooltipLayer, arrowLayer, helperNumberLayer);
+       
+      // },1500);
     }
 
     if (this._currentStep == 0 && this._introItems.length > 1) {
