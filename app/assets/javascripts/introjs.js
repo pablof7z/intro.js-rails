@@ -697,7 +697,12 @@
       tooltipLayer.appendChild(buttonsLayer);
 
       //set proper position
+      var style_height = tooltipTextLayer.style.height;
+      if(targetElement.final_height)
+        tooltipTextLayer.style.height = targetElement.final_height
+      
       _placeTooltip.call(self, targetElement.element, tooltipLayer, arrowLayer, helperNumberLayer);
+      tooltipTextLayer.style.height = style_height;
       // setTimeout(function() {
       //  _placeTooltip.call(self, targetElement.element, tooltipLayer, arrowLayer, helperNumberLayer);
        
