@@ -651,6 +651,11 @@
         if (self._introItems.length - 1 != self._currentStep) {
           _nextStep.call(self);
         }
+        else 
+        {
+          if(typeof (self._introCompleteCallback) === 'function') self._introCompleteCallback.call(self);
+          _exitIntro.call(self, self._targetElement);
+        }
       };
 
       nextTooltipButton.href = 'javascript:void(0);';
@@ -713,14 +718,28 @@
       prevTooltipButton.className = 'introjs-button introjs-prevbutton introjs-disabled';
       nextTooltipButton.className = 'introjs-button introjs-nextbutton';
       skipTooltipButton.innerHTML = this._options.skipLabel;
+
+      nextTooltipButton.innerHTML = this._options.nextLabel;
+      skipTooltipButton.hidden = false;
+
+
     } else if (this._introItems.length - 1 == this._currentStep || this._introItems.length == 1) {
-      skipTooltipButton.innerHTML = this._options.doneLabel;
+      //skipTooltipButton.innerHTML = this._options.doneLabel;
       prevTooltipButton.className = 'introjs-button introjs-prevbutton';
-      nextTooltipButton.className = 'introjs-button introjs-nextbutton introjs-disabled';
+      //nextTooltipButton.className = 'introjs-button introjs-nextbutton introjs-disabled';
+      skipTooltipButton.hidden = true;
+      nextTooltipButton.innerHTML = this._options.doneLabel;
+
+
     } else {
       prevTooltipButton.className = 'introjs-button introjs-prevbutton';
       nextTooltipButton.className = 'introjs-button introjs-nextbutton';
       skipTooltipButton.innerHTML = this._options.skipLabel;
+
+      skipTooltipButton.hidden = false;
+      nextTooltipButton.innerHTML = this._options.nextLabel;
+
+
     }
 
     //Set focus on "next" button, so that hitting Enter always moves you onto the next step
