@@ -438,8 +438,8 @@
 
         tooltipLayer.style.left   = '50%';
         tooltipLayer.style.top    = '50%';
-        console.log('floating:' + tooltipOffset.height);
-        console.log(tooltipLayer)
+        //console.log('floating:' + tooltipOffset.height);
+        //console.log(tooltipLayer)
         tooltipLayer.style.marginLeft = '-' + (tooltipOffset.width / 2)  + 'px';
         tooltipLayer.style.marginTop  = '-' + (tooltipOffset.height / 2) + 'px';
 
@@ -653,7 +653,8 @@
         }
         else 
         {
-          if(typeof (self._introCompleteCallback) === 'function') self._introCompleteCallback.call(self, self._currentStep);
+          //console.log(self._introCompleteCallback)
+          if (self._introCompleteCallback != undefined) self._introCompleteCallback.call(self, self._currentStep);
           _exitIntro.call(self, self._targetElement);
         }
       };
