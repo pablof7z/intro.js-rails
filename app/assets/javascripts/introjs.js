@@ -681,11 +681,11 @@
 
       skipTooltipButton.onclick = function() {
         if (self._introItems.length - 1 == self._currentStep && typeof (self._introCompleteCallback) === 'function') {
-          self._introCompleteCallback.call(self);
+          self._introCompleteCallback.call(self, self._currentStep);
         }
 
         if (self._introItems.length - 1 != self._currentStep && typeof (self._introExitCallback) === 'function') {
-          self._introExitCallback.call(self);
+          self._introExitCallback.call(self, self._currentStep);
         }
 
         _exitIntro.call(self, self._targetElement);
