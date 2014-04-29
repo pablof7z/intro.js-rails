@@ -272,7 +272,7 @@
       //end of the intro
       //check if any callback is defined
       if (typeof (this._introCompleteCallback) === 'function') {
-        this._introCompleteCallback.call(this);
+        this._introCompleteCallback.call(this, this._currentStep);
       }
       _exitIntro.call(this, this._targetElement);
       return;
@@ -653,7 +653,7 @@
         }
         else 
         {
-          if(typeof (self._introCompleteCallback) === 'function') self._introCompleteCallback.call(self);
+          if(typeof (self._introCompleteCallback) === 'function') self._introCompleteCallback.call(self, self._currentStep);
           _exitIntro.call(self, self._targetElement);
         }
       };
