@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "sass-rails", ">= 3.2"
   s.add_development_dependency "bundler", "~> 1.0"
   s.add_development_dependency "rails", "~> 3.0"
-  s.add_development_dependency "httpclient", "~> 2.2"
+  s.add_development_dependency "httpclient", "~> 2.6"
 end
