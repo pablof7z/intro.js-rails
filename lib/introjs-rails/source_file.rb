@@ -9,13 +9,27 @@ class SourceFile < Thor
   def fetch
     filtered_tags = fetch_tags
     tag = select("Which tag do you want to fetch?", filtered_tags)
-    self.destination_root = "app/assets"
     remote = "https://github.com/usablica/intro.js"
-    get "#{remote}/raw/#{tag}/minified/intro.min.js", "javascripts/introjs.js"
-    get "#{remote}/raw/#{tag}/minified/introjs.min.css", "stylesheets/introjs.css"
+    get "#{remote}/raw/#{tag}/minified/intro.min.js", "app/assets/javascripts/introjs.js"
+    get "#{remote}/raw/#{tag}/minified/introjs.min.css", "app/assets/stylesheets/introjs.css"
+    create_file 'lib/introjs-rails/version.rb', version_file(tag)
   end
 
   private
+
+  VERSION_REGEX = /(v)?(?<version>\d.\d(.\d)?)/
+
+  def version_file(tag)
+    version = VERSION_REGEX.match(tag)[:version]
+    
+    <<~RUBY
+      module Introjs
+        module Rails
+          VERSION = '#{version}'
+        end
+      end
+    RUBY
+  end
 
   def fetch_tags
     http = HTTPClient.new
