@@ -13,6 +13,7 @@ class SourceFile < Thor
     remote = "https://github.com/usablica/intro.js"
     get "#{remote}/raw/#{tag}/minified/intro.min.js", "javascripts/introjs.js"
     get "#{remote}/raw/#{tag}/minified/introjs.min.css", "stylesheets/introjs.css"
+    get "#{remote}/raw/#{tag}/minified/introjs-rtl.min.css", "stylesheets/introjs-rtl.css"
   end
 
   private
